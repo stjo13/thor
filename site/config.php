@@ -10,6 +10,23 @@
     error_reporting(-1);
     ini_set('display_errors', 1);
 
+
+/**
+* Set database(s).
+*/
+$to->config['database'][0]['dsn'] = 'sqlite:' . THOR_SITE_PATH . '/data/.ht.sqlite';
+
+	
+/**
+* Set what to show as debug or developer information in the get_debug() theme helper.
+*/
+$to->config['debug']['thor'] = false;
+$to->config['debug']['session'] = false;
+$to->config['debug']['timer'] = true;
+$to->config['debug']['db-num-queries'] = true;
+$to->config['debug']['db-queries'] = true;
+
+
 /**
  * What type of urls should be used?
  * 
@@ -24,10 +41,13 @@ $to->config['url_type'] = 1;
  */
 $to->config['base_url'] = null;
 
+
     /*
     * Define session name
     */
     $to->config['session_name'] = preg_replace('/[:\.\/-_]/', '', $_SERVER["SERVER_NAME"]);
+	$to->config['session_key'] = 'thor';
+	
 
     /*
     * Define server timezone
@@ -56,6 +76,7 @@ $to->config['base_url'] = null;
 $to->config['controllers'] = array(
   'index'     => array('enabled' => true,'class' => 'CCIndex'),
   'developer' => array('enabled' => true,'class' => 'CCDeveloper'),
+  'guestbook' => array('enabled' => true,'class' => 'CCGuestbook'),
 );
 
 /**

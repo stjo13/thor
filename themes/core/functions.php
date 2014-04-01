@@ -6,9 +6,14 @@
 /**
  * Add static entries in the template file. 
  */
-$to->data['header'] = '<h1>Header: Thor</h1>';
+$to->data['header'] = 'Thor';
+$to->data['slogan'] = 'A PHP-based MVC-inspired CMF';
+$to->data['favicon'] = theme_url('logo_80x80.png');
+$to->data['logo'] = theme_url('logo_80x80.png');
+$to->data['logo_width'] = 80;
+$to->data['logo_height'] = 80;
 $to->data['footer'] = <<<EOD
-<p>Footer: &copy; Thor by Staffan Johansson</p>
+<p>Footer: &copy; Thor by Staffan Johansson based on Lydia by Mikael Roos (mos@dbwebb.se)</p>
 
 <p>Tools: 
 <a href="http://validator.w3.org/check/referer">html5</a>
